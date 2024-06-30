@@ -1,0 +1,197 @@
+
+:root {
+  --marhbabik-blue: #3F75BB; /* Blue */
+  --marhbabik-gradiant-blue: linear-gradient(to top left, #3F75BB, #7FADE9);
+  --marhbabik_gray: #; /* Green */
+  --accent-color: #e74c3c; /* Red */
+
+  --custom-color: #3F75BB;
+  --custom-color2: #001939;
+  --custom-color3: #D34113;
+}
+
+.parallax-mh {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay-mh {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wilaya-name {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+
+
+
+
+
+
+.bg-mh-blue {
+  background: linear-gradient(to top left, var(--custom-color), #7fade9);
+}
+.bg-mh-dark {
+  background: linear-gradient(to top left, var(--custom-color2), #001024);
+}
+.bg-mh-red {
+  background: linear-gradient(to top left, var(--custom-color3), #ff5d2b);
+}
+.text-mh-blue {
+  color: var(--custom-color);
+}
+.text-mh-dark {
+  color: var(--custom-color2);
+}
+.text-mh-red {
+  color: var(--custom-color3);
+}
+body {
+  font-family: "Axiforma", sans-serif;
+}
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-Thin.otf") format("otf");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-Light.otf") format("otf");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-Book.otf") format("otf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-Regular.otf") format("otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-Medium.otf") format("otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-SemiBold.otf") format("otf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-Bold.otf") format("otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-ExtraBold.otf") format("otf");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("src/fonts/Kastelov-Axiforma-Black.otf") format("otf");
+  font-weight: 900;
+  font-style: normal;
+}
+.font-100 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 100;
+}
+.font-200 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 200;
+}
+.font-300 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 300;
+}
+.font-400 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 400;
+}
+.font-500 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 500;
+}
+.font-600 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 600;
+}
+.font-700 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 700;
+}
+.font-800 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 800;
+}
+.font-900 {
+  font-family: "Axiforma", sans-serif;
+  font-weight: 900;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Roboto:wght@900&display=swap');
+
+.animated-text {
+  font-family: "Axiforma", sans-serif;
+  animation: switchText 4s infinite;
+}
+
+@keyframes switchText {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Apply specific font for Arabic and Tifinagh */
+@font-face {
+  font-family: 'Amiri';
+  src: url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+}
+
+.animated-text:lang(ar) {
+  font-family: 'Amiri', serif;
+}
