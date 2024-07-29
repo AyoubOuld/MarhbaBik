@@ -161,7 +161,7 @@ export function UserNavbar() {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-mh-blue bg-opacity-0 backdrop-blur-lg text-white rounded-box w-60"
+              className="dropdown-content z-[1] menu p-2 shadow bg-mh-blue bg-opacity-0 backdrop-blur-lg rounded-box text-white w-52"
             >
               {wishlist.length > 0 ? (
                 wishlist.map((destination) => (
