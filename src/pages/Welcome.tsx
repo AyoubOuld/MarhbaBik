@@ -33,9 +33,15 @@ const Welcome = () => {
                 <ShowWilaya selectedRegion="kabylie" />
               </div>
               <div className="mt-8 w-full bg-gray-100 lg:px-32">
+                <h1 className="w-full text-center text-4xl font-bold pt-12 text-mh-dark font-800">
+                  Places to visit in <span className="text-mh-blue">Kabylie</span>
+                </h1>
                 <ShowDestination selectedRegion="kabylie" />
               </div>
               <div className="mt-8 w-full">
+                <h1 className="w-full text-center text-4xl font-bold pt-12 text-mh-dark font-800">
+                  Things to do in <span className="text-mh-blue">Kabylie</span>
+                </h1>
                 <ShowActivities selectedRegion="kabylie" />
               </div>
             </div>
@@ -49,9 +55,9 @@ const Welcome = () => {
               </span>
             </h1>
             <p className="text-lg text-mh-dark mb-4 text-center px-4 lg:px-32 font-300">
-              Kabylie is known for its stunning landscapes, rich culture, and
-              vibrant history. Explore the top destinations, activities, and
-              more.
+              Algeria, a land of breathtaking landscapes, diverse cultures, and
+              ancient history. Discover the top destinations, experiences, and
+              hidden gems that this incredible country has to offer.
             </p>
             <div className="p-2">
               <ShowWilaya selectedRegion={selectedRegion} />

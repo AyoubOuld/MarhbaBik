@@ -53,7 +53,7 @@ const AddBlog = () => {
   const auth = getAuth();
   const user = auth.currentUser;
 
-  const handleImageUpload = async (image: File, blogId: string) => {
+  const handleImageUpload = async (image: File) => {
     const imageRef = ref(storage, `blogs/${title}/${uuidv4()}`);
     const uploadTask = uploadBytesResumable(imageRef, image);
 
@@ -98,7 +98,7 @@ const AddBlog = () => {
     try {
       const blogId = uuidv4();
       const imageUrls = await Promise.all(
-        Array.from(images).map((image) => handleImageUpload(image, blogId))
+        Array.from(images).map((image) => handleImageUpload(image))
       );
 
       const blogData = {

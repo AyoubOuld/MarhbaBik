@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Label, TextInput, FileInput } from "flowbite-react";
+import { Button, Label, TextInput, FileInput, Checkbox } from "flowbite-react";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -181,14 +181,22 @@ const SignupForm = () => {
         </div>
         <div className="flex items-center gap-2">
           <Label htmlFor="agree" className="flex">
-            Already have an account ?
-              <Link to="/Login" className="text-green-700 underline"> Log in here</Link>
+            <Checkbox className="mx-1"/>
+                Agree to the 
+              <Link to="/Terms&Conditions" className="text-green-700 underline mx-1">  terms & conditions.</Link>
           </Label>
         </div>
+        
         <Button onClick={handleSignup}>Register new account</Button>
         <Button color="green" onClick={handleSigninWithGoogle}>
           Register with Google
         </Button>
+        <div className="flex justify-center gap-2">
+          <Label htmlFor="agree" className="flex">
+            Already have an account ?
+              <Link to="/Login" className="text-green-700 underline"> Log in here</Link>
+          </Label>
+        </div>
       </form>
     </>
   );

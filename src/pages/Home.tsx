@@ -28,7 +28,7 @@ export const Home = () => {
               Our <span className="text-mh-blue">services</span>
             </span>
           </div>
-          <div className="min-h-screen lg:h-auto">
+          <div className="min-h-screen lg:h-auto w-full">
             <TabsDemo />
           </div>
         </div>

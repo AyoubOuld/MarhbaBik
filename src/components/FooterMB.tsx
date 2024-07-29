@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../imgs/marhbabik-new2.png"
 
 export function FooterMB() {
@@ -62,8 +63,8 @@ export function FooterMB() {
       </nav>
       <nav className="leading-10 font-300 text-lg text-white">
         <h6 className="footer-title text-white">Legal</h6>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
+        <Link to="/Terms&Conditions" className="link link-hover"> Terms & conditions</Link>
+        <Link to="/PrivacyPolicy" className="link link-hover"> Privacy Policy</Link>
         <a className="link link-hover">Cookie policy</a>
       </nav>
     </footer>

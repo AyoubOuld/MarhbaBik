@@ -45,7 +45,6 @@ export function UserNavbar() {
               setUserPic(userData.profilePicture);
 
               // Fetch wishlist data
-              // Fetch wishlist data
               const wishlistData = await Promise.all(
                 (userData.wisheddestinations || []).map(
                   async (destination: any) => {
@@ -73,9 +72,6 @@ export function UserNavbar() {
                   }
                 )
               );
-
-              // Filter out null values and set the wishlist state
-              setWishlist(wishlistData.filter((item) => item !== null));
 
               // Filter out null values and set the wishlist state
               setWishlist(wishlistData.filter((item) => item !== null));
@@ -154,71 +150,71 @@ export function UserNavbar() {
         <Navbar.Brand href="/">
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="MarhbaBik Logo" />
         </Navbar.Brand>
-        <div className="flex md:order-2">
-          <div className="flex items-center space-x-4">
-            <div className="dropdown dropdown-bottom dropdown-end ">
-              <div tabIndex={0} role="button" className="btn bg-white hover:bg-blue-400 rounded-full border-0">
-                <CiBookmark size={"30px"} color="#3F75BB"/>
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-mh-blue rounded-box w-52"
-              >
-                {wishlist.length > 0 ? (
-                  wishlist.map((destination) => (
-                    <li
-                      key={destination.id}
-                      onClick={() => handleDestinationClick(destination.id)}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <img
-                          src={destination.thumbnailUrl}
-                          alt=""
-                          className="rounded-lg w-10 h-10"
-                        />
-                        <div className="flex w-full justify-between">
-                          <p>
-                            {destination.name}, {destination.wilaya}
-                          </p>
-                          <button
-                            onClick={() =>
-                              handleRemoveFromWishlist(destination)
-                            }
-                            className="hover:text-red-600"
-                          >
-                            <IoMdRemoveCircle />
-                          </button>
-                        </div>
+        <div className="flex md:order-2 items-center space-x-4">
+          <div className="dropdown dropdown-bottom dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn bg-white hover:bg-blue-400 rounded-full border-0"
+            >
+              <CiBookmark size={"30px"} color="#3F75BB" />
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-mh-blue bg-opacity-0 backdrop-blur-lg text-white rounded-box w-60"
+            >
+              {wishlist.length > 0 ? (
+                wishlist.map((destination) => (
+                  <li
+                    key={destination.id}
+                    onClick={() => handleDestinationClick(destination.id)}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <img
+                        src={destination.thumbnailUrl}
+                        alt=""
+                        className="rounded-lg w-10 h-10"
+                      />
+                      <div className="flex w-full justify-between">
+                        <p>
+                          {destination.name}, {destination.wilaya}
+                        </p>
+                        <button
+                          onClick={() => handleRemoveFromWishlist(destination)}
+                          className="hover:text-red-600"
+                        >
+                          <IoMdRemoveCircle />
+                        </button>
                       </div>
-                    </li>
-                  ))
-                ) : (
-                  <li>No items in wishlist</li>
-                )}
-              </ul>
-            </div>
-            <div className="relative">
-              <Dropdown
-                arrowIcon={false}
-                inline
-                label={<Avatar alt="User settings" img={userPic} rounded />}
-              >
-                <Dropdown.Header>
-                  <span className="flex">
-                    <span className="block text-sm mr-1">{userFirstName}</span>
-                    <span className="block text-sm">{userLastName}</span>
-                  </span>
-                  <span className="block text-sm">{userEmail}</span>
-                  <span className="block truncate text-sm font-medium">
-                    {userRole}
-                  </span>
-                </Dropdown.Header>
-                <Dropdown.Divider />
-                <Dropdown.Item onClick={handleSignOut}>
-                  <Button color="red">Sign Out</Button>
-                </Dropdown.Item>
-              </Dropdown>
-            </div>
+                    </div>
+                  </li>
+                ))
+              ) : (
+                <li>No items in wishlist</li>
+              )}
+            </ul>
+          </div>
+          <div className="relative">
+            <Dropdown
+              arrowIcon={false}
+              inline
+              label={<Avatar alt="User settings" img={userPic} rounded />}
+            >
+              <Dropdown.Header>
+                <span className="flex">
+                  <span className="block text-sm mr-1">{userFirstName}</span>
+                  <span className="block text-sm">{userLastName}</span>
+                </span>
+                <span className="block text-sm">{userEmail}</span>
+                <span className="block truncate text-sm font-medium">
+                  {userRole}
+                </span>
+              </Dropdown.Header>
+              <Dropdown.Divider />
+              <Dropdown.Item onClick={handleSignOut}>
+                <Button color="red">Sign Out</Button>
+              </Dropdown.Item>
+            </Dropdown>
           </div>
           <Navbar.Toggle />
         </div>
@@ -233,53 +229,49 @@ export function UserNavbar() {
           >
             Destinations
           </Navbar.Link>
-          <Navbar.Link
-            active={path === "/About"}
-            as="div" /*as={Link} to="/About"*/
-          >
-            <Dropdown label="About us" inline>
-              <Dropdown.Item>
+          <li>
+            <details>
+              <summary className="text-black">About us</summary>
+              <ul className="bg-white absolute text-black rounded-lg p-2">
                 <Navbar.Link active={path === "/About"} as={Link} to="/About">
                   About us
                 </Navbar.Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
                 <Navbar.Link active={path === "/FAQ"} as={Link} to="/FAQ">
                   FAQ
                 </Navbar.Link>
-              </Dropdown.Item>
-            </Dropdown>
-          </Navbar.Link>
-          <Navbar.Link
-            active={path === "/Join"}
-            as="div" /*as={Link} to="/About"*/
-          >
-            <Dropdown label="Join us" inline>
-              <Dropdown.Item>
-                <Navbar.Link
-                  active={path === "/Homeowner"}
-                  as={Link}
-                  to="/Homeowner"
-                >
-                  Home owner
-                </Navbar.Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Navbar.Link
-                  active={path === "/Carowner"}
-                  as={Link}
-                  to="/Carowner"
-                >
-                  Car owner
-                </Navbar.Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Navbar.Link active={path === "/Agency"} as={Link} to="/Agency">
-                  Travelling agency
-                </Navbar.Link>
-              </Dropdown.Item>
-            </Dropdown>
-          </Navbar.Link>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <li>
+              <details>
+                <summary className="text-black">Join us</summary>
+                <ul className="bg-white absolute text-black rounded-lg p-2">
+                  <Navbar.Link
+                    active={path === "/Homeowner"}
+                    as={Link}
+                    to="/Homeowner"
+                  >
+                    Home owner
+                  </Navbar.Link>
+                  <Navbar.Link
+                    active={path === "/Carowner"}
+                    as={Link}
+                    to="/Carowner"
+                  >
+                    Car owner
+                  </Navbar.Link>
+                  <Navbar.Link
+                    active={path === "/Agency"}
+                    as={Link}
+                    to="/Agency"
+                  >
+                    Travelling agency
+                  </Navbar.Link>
+                </ul>
+              </details>
+            </li>
+          </li>
           <Navbar.Link active={path === "/Blog"} as={Link} to="/Blog">
             Blog
           </Navbar.Link>

@@ -16,6 +16,8 @@ import { Carowner } from "./pages/Carowner";
 import { Agency } from "./pages/Agency";
 import Blog from "./pages/Blog";
 import { Home } from "./pages/Home";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const App = () => {
   return (
@@ -31,7 +33,9 @@ const App = () => {
         <Route path="Login" element={<Login/>}/>
         <Route path="/AdminLogin" element={<AdminLogin />} />
         <Route path="/Add" element={<Add />} />
+        <Route path="/Terms&Conditions" element={<TermsAndConditions/>} />
         <Route path="/Blog" element={<Blog />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
         <Route path="/wilaya/:wilayaName" element={<Wilaya/>} />
         <Route path="/destination/:destinationId" element={<Destination/>} />
 

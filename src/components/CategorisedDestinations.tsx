@@ -202,7 +202,7 @@ const CategorisedDestinations: React.FC<CategorisedDestinationsProps> = ({
         </div>
       ) : (
         <>
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-5">
             {destinations.map((destination) => {
               const isInWishlist = userData?.wisheddestinations?.some(
                 (item: WishlistItem) => item.id === destination.id
@@ -213,6 +213,7 @@ const CategorisedDestinations: React.FC<CategorisedDestinationsProps> = ({
                   <DirectionAwareHover
                     key={destination.id}
                     imageUrl={destination.thumbnailUrl}
+                    className="w-100 md:w-auto"
                   >
                     <div className="">
                       <button

@@ -59,7 +59,7 @@ const ShowWilaya = ({ selectedRegion }: { selectedRegion: string }) => {
             <MoonLoader color="#36d7b7" />
           </div>
         ) : (
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 mx-2">
             {wilayas.length === 0 ? (
               <div className="text-center text-gray-500">
                 No wilayas found for the selected region.
@@ -68,7 +68,7 @@ const ShowWilaya = ({ selectedRegion }: { selectedRegion: string }) => {
               wilayas.map((wilaya) => (
                 <CardContainer
                   key={wilaya.id}
-                  className="inter-var lg:max-w-72 md:max-w-[25rem] sm:w-full "
+                  className="inter-var md:max-w-[25rem] sm:w-full "
                 >
                   <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto  lg:max-w-[40rem] md:w-[100rem] sm:w-full max-[1000px]:w-[20rem]  h-auto rounded-xl p-6 border">
                     <CardItem
@@ -91,7 +91,7 @@ const ShowWilaya = ({ selectedRegion }: { selectedRegion: string }) => {
                         translateZ={20}
                         as={Button}
                         onClick={() => navigate(`/wilaya/${wilaya.name}`)}
-                        className="px-4 py-2 rounded-full bg-black dark:bg-white dark:text-black text-white text-xs font-bold hover:bg-blue-500"
+                        className="px-4 py-2 mb-4 rounded-full bg-black dark:bg-white dark:text-black text-white text-xs font-bold hover:bg-blue-500"
                       >
                         Explore {wilaya.name}
                       </CardItem>
